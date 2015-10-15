@@ -247,7 +247,23 @@ Ruins 13.9 adds optional variable "preventRotation" which keeps a template in th
 
 Defaults to 0. Values of 0 are handled as if no value was specified at all.
 
-Ruins 14.3 adds the optional repeatable variable "adjoining_template" which lets you spawn adjacent templatesthese will not be checked for minimal distances against ANY other ruins, make sure your spacings are big enoughthese will also not be checked for circular dependencies, you build an infinite loop, you wait it outthese will be checked against the rules the template itself containsRuins will use its spawning algorithm to determine a fitting y coordinate to the xz you provideadjoining templates will be randomly rotated, you can disable this in their templates if you wantsyntax: adjoining_template=<template>;<relativeX>;<allowedYdifference>;<relativeZ>[;<spawnchance>]<template> is the full filepath relative to the resources/ruins folder, so, working like /testruin<relativeX> and <relativeZ> are the relative coords from the host x,z spawnpoint to the adjoining x,z<allowedYdifference> states how much the computed adjoining template height may absolutely differ before aborting<spawnchance> is optional and does what the name implies, [0-100] values allowedExample: adjoining_template=generic/MoaiHead;-25;10;25;33
+Ruins 14.3 adds the optional repeatable variable "adjoining_template" which lets you spawn adjacent templates:
+
+* they will not be checked for minimal distances against ANY other ruins, make sure your spacings are big enough
+* they will also not be checked for circular dependencies, you build an infinite loop, you wait it out
+* they will be checked against the rules the template itself contains
+
+Ruins will use its spawning algorithm to determine a fitting y coordinate to the xz you provide
+
+Note: adjoining templates will be randomly rotated, you can disable this in their templates if you want
+
+__syntax:__
+
+    adjoining_template=<template>;<relativeX>;<allowedYdifference>;<relativeZ>[;<spawnchance>]
+
+* `template` is the full filepath relative to the resources/ruins folder, so, working like 
+* `/testruin `<relativeX>` and `<relativeZ>` are the relative coords from the host x,z spawnpoint to the adjoining x,z
+* `<allowedYdifference>` states how much the computed adjoining template height may absolutely differ before aborting<spawnchance> is optional and does what the name implies, [0-100] values allowedExample: adjoining_template=generic/MoaiHead;-25;10;25;33
 
 ```
 weight=5
