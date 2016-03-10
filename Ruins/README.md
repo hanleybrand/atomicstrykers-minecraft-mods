@@ -62,7 +62,9 @@ For advanced features such as basements consult template_rules.txt
 `/testruin TEMPLATENAME [X Y Z [ROTATION]]`
 
 [] parts are optional each. `TEMPLATENAME` is either a filename in the "templateparser" biome folder 
-or a folder and a template filename e.g  `/testruin ocean/lighthouse`
+or a folder and a template filename e.g:
+
+> `/testruin ocean/lighthouse`
 
 `/testruin` can be called exactly once without any arguments after successfully parsing a template 
 in order to immediatly test that template
