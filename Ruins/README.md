@@ -388,11 +388,15 @@ Use a tool like Simply Hax to get correct Entity Id's
 Ruins 9.0 exposes minecraft ChestGenHook for your meddling.
 
     rule1=0,100,ChestGenHook:dungeonChest:10
+    
+Note that as of Minecraft 1.9 the same rule would be
 
+    rule1=0,100,ChestGenHook:chests/simple_dungeon:10
+    
 This spawns a chest and tells the Minecraft generator to fill it with "10" items of the "dungeonChest" preset.
 This might include extremely powerful items added by mods.	
 
-Here is the complete list (as of mc 1.4.7) of ChestGen presets:  
+Here is the complete list (from mc 1.4.7 throu 1.8.9) of ChestGen presets:  
 
 ```
 "mineshaftCorridor"; 
@@ -405,6 +409,23 @@ Here is the complete list (as of mc 1.4.7) of ChestGen presets:
 "villageBlacksmith"; 
 "bonusChest"; 
 "dungeonChest";	
+```
+
+The Chestgen presets were renamed as of Mineraft 1.9, so for the 1.9 branch on the presets are:
+
+```
+chests/spawn_bonus_chest
+chests/end_city_treasure
+chests/simple_dungeon
+chests/village_blacksmith
+chests/abandoned_mineshaft
+chests/nether_bridge
+chests/stronghold_library
+chests/stronghold_crossing
+chests/stronghold_corridor
+chests/desert_pyramid
+chests/jungle_temple
+chests/igloo_chest
 ```
 
 As of 10.6, all chest rules can also append a metadata/rotation int similar to a chest block ID	
@@ -471,6 +492,10 @@ If you specify the same slot index multiple times, only the first `itemstack` ge
 Ruins 15.0 adds ChestGenHook (see above) as valid <itemList> entry for IInventory rules
 
     rule1=0,100,IInventory;dispenser;ChestGenHook:dungeonChest:5-1
+
+or as of MC 1.9
+
+    rule1=0,100,IInventory;dispenser;ChestGenHook:chests/simple_dungeon:5-1
 
 
 #### Example 13: 
